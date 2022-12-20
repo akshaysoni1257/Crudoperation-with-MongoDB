@@ -1,0 +1,30 @@
+<form action="/viewdata" method="post">
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>City</td>
+            <td>Gender</td>
+            <td>Hobby</td>
+            <td>State</td>
+            <td>action</td>
+        </tr>
+        <%  for(let i in recorddata) { %>
+        <tr>
+            <td><%= recorddata[i].name %></td>
+            <td><%= recorddata[i].email %></td>
+            <td><%= recorddata[i].phone %></td>
+            <td><%= recorddata[i].city %></td>
+            <td><%= recorddata[i].gender %></td>
+            <td><%= recorddata[i].hobby %></td>
+            <td><%= recorddata[i].state %></td>
+            <td><a href="/deletedata/<%= recorddata[i].id %>">Delete</a>||
+                <a href="/editdata/<%= recorddata[i].id%>">Edit</a>
+            </td>
+        </tr>
+        <% } %>
+    </table>    
+</form>
+
+<a href="/" style="text-decoration:none;color:red;font-size: 30px;font-family: 'jost';text-transform: uppercase;border: 2px solid red;">Add Data Click here👈</a>
